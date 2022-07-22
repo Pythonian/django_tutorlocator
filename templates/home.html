@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Welcome Home{% endblock %}
+
+{% block content %}
+
+<header class="bg-dark py-5">
+    <div class="container">
+        <div class="row gx-5 align-items-center justify-content-center">
+            <div class="col-lg-6">
+                <div class="my-5">
+                    <h1 class="display-5 fw-bolder text-white mb-2">Find the right tutor for <br>Private or Group tutoring.</h1>
+                    <p class="lead fw-normal text-white-50 mb-4">Private, 1-on-1 lessons with a tutor of your choice. Or organize a group tutorial with friends. The choice is yours.</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'search' %}">Find a tutor</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'svg/teaching.svg' %}" class="d-block mx-lg-auto img-fluid" alt="Teaching illustration">
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="px-4 py-5 bg-light">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 pt-4 text-center">
+                <h2 class="fw-bolder">How It Works</h2>
+            </div>
+        </div>
+        <div class="row g-4 py-5">
+            <div class="col-lg-3 text-center">
+                <div
+                    class="d-inline-flex align-items-center justify-content-center text-bg-primary fs-2 mb-3">
+                    <i class="fa-brands fa-searchengin fa-2x text-primary"></i>
+                </div>
+                <h4>Search tutors online</h4>
+                <p>Search and compare online & local tutors by subject and level.</p>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="d-inline-flex align-items-center justify-content-center text-bg-primary fs-2 mb-3">
+                    <i class="fa-solid fa-certificate fa-2x text-primary"></i>
+                </div>
+                <h4>View tutors' qualifications</h4>
+                <p>Book online in about 60 seconds and plan your private lessons according to your own schedule.</p>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="d-inline-flex align-items-center justify-content-center text-bg-primary fs-2 mb-3">
+                    <i class="fa-solid fa-users-gear fa-2x text-primary"></i>
+                </div>
+                <h4>Contact as many tutors</h4>
+                <p>Contact as many tutors as you would like through our messaging system</p>
+            </div>
+            <div class="col-lg-3 text-center">
+                <div class="d-inline-flex align-items-center justify-content-center text-bg-primary fs-2 mb-3">
+                    <i class="fa-solid fa-user-check fa-2x text-primary"></i>
+                </div>
+                <h4>Select your perfect tutor</h4>
+                <p>Select your perfect tutor and book your first lesson</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-dark">
+    <div class="container py-3">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 pt-4 text-center">
+                <h2 class="fw-bolder">Testimonials</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div id="carouselTestimonial" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    {% for testimonial in testimonials %}
+                    <button type="button" data-bs-target="#carouselTestimonial" data-bs-slide-to="{{ forloop.counter0 }}" aria-label="Slide {{ forloop.counter }}" {% if forloop.first %}class="active"{% endif %}></button>
+                    {% endfor %}
+                </div>
+                <div class="carousel-inner" style="height:250px">
+                    {% for testimonial in testimonials %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
+                        <div class="carousel-caption text-white top-50">
+                            <h3 class="mb-4">{{ testimonial.text|truncatechars:230 }}</h3>
+                            <p class="text-primary">- {{ testimonial.fullname }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonial" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonial" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <h2 class="fw-bolder">Browse Tutors by Courses</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            {% for course in courses %}
+            <div class="col-lg-3 mb-3 fs-5">
+                <i class="fa-solid fa-chevron-right me-2"></i> <a href="{{ course.get_absolute_url }}">{{ course.name }}</a>
+            </div>
+            {% empty %}No data available.
+            {% endfor %}
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <a href="{% url 'courses' %}" class="btn btn-lg btn-primary rounded">View all Courses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-5">
+    <div class="container">
+        <div class="row gx-5 justify-content-center mb-5">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <h2 class="fw-bolder">Explore Tutor Locator</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-lg-4">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <h4 class="my-0 fw-normal py-3 border-bottom-0 text-center">For Students</h4>
+                    <div class="card-body">
+                        <ul class="list-group w-auto list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between py-3">
+                                <i class="fa-solid fa-check fa-2x"></i>
+                                <div class="me-auto ms-3">
+                                    <span class="fs-5">Search for online and local tutors</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between py-3">
+                                <i class="fa-solid fa-check fa-2x"></i>
+                                <div class="me-auto ms-3">
+                                    <span class="fs-5">Manage your lessons through our bookings system</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between py-3">
+                                <i class="fa-solid fa-check fa-2x"></i>
+                                <div class="me-auto ms-3">
+                                    <span class="fs-5">All our tutors are verified</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between py-3">
+                                <i class="fa-solid fa-check fa-2x"></i>
+                                <div class="me-auto ms-3">
+                                    <span class="fs-5">You can easily reach us for feedback</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="{% url 'signup' %}" class="w-100 btn btn-lg btn-primary">Get started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <h4 class="my-0 fw-normal py-3 border-bottom-0 text-center">For Tutors</h4>
+                    <div class="card-body">
+                        <ul class="list-group w-auto list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between py-3">
+                                <i class="fa-solid fa-check fa-2x"></i>
+                                <div class="me-auto ms-3">
+                                    <span class="fs-5">Our site is completely free for tutors.</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between py-3">
+                                <i class="fa-solid fa-check fa-2x"></i>
+                                <div class="me-auto ms-3">
+                                    <span class="fs-5">Create your own profile and advertise your services</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between py-3">
+                                <i class="fa-solid fa-check fa-2x"></i>
+                                <div class="me-auto ms-3">
+                                    <span class="fs-5">Manage your schedules</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between py-3">
+                                <i class="fa-solid fa-check fa-2x"></i>
+                                <div class="me-auto ms-3">
+                                    <span class="fs-5">Search for latest tuition jobs</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="{% url 'signup' %}" class="w-100 btn btn-lg btn-primary">Get started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3"> 
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fa-solid fa-circle-question fa-3x ms-2"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <span class="fs-4">Have a Question?</span>
+                        <br> <span>Please reach out to us immediately via our contact button.</span>
+                    </div>
+                    <button class="btn btn-primary">Contact us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
