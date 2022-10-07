@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card border-secondary">
+                    <div class="p-4">
+                        <div class="text-center">
+                            <img src="{{ request.user.student.image.url }}" width="150px" height="150px" alt="" class="rounded-circle">
+                            <h4 class="fw-bold mb-0 mt-4">Gabriel Palmer</h4>
+                            <p class="text-muted">Creative Designer</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4">
+                        <ul class="list-unstyled">
+                            <li class="mb-2 p-2"><a href="" class="text-decoration-none"><i class="fa fa-user me-2"></i> Company Profile</a></li>
+                            <li class="mb-2 p-2"><a href="" class="text-decoration-none"><i class="fa fa-receipt me-2"></i> Resume</a></li>
+                            <li class="mb-2 p-2 bg-primary rounded opacity-75"><a class="text-white text-decoration-none" href="employer-manage-jobs.html"><i class="fa fa-suitcase me-2"></i> Manage Jobs</a></li>
+                            <li class="mb-2 p-2"><a class="text-decoration-none" href="employer-post-job.html"><i class="fa fa-book-reader me-2"></i> Post A Jobs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="border-top p-4">
+                        <dl class="row">
+                            <dt class="col-4">Categories</dt>
+                            <dd class="col-8">Accounting / Finance</dd>
+                        
+                            <dt class="col-4">Offered Salary</dt>
+                            <dd class="col-8">$450 per hour</dd>
+                        
+                            <dt class="col-4">Languages</dt>
+                            <dd class="col-8">English, Turkish, Japanese</dd>
+                        
+                            <dt class="col-4">Experience</dt>
+                            <dd class="col-8">3 Years</dd>
+                        
+                            <dt class="col-4">Qualification</dt>
+                            <dd class="col-8">Associate Degree</dd>
+                        </dl>
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-danger w-100"><i
+                                    class="fas fa-phone fx-1 me-2"></i> Contact Me</a>
+                            <a href="#" class="btn btn-primary w-100 mt-2"><i
+                                    class="fas fa-download fx-1 me-2"></i> Download CV</a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4 border-top">
+                        <h6 class="fw-bold mb-3">Working Days</h6>
+                        <div class="ur-detail-wrap-body">
+                            <ul class="list-unstyled">
+                                <li class="d-flex justify-content-between mb-2">Monday<span>9AM - 5PM</span></li>
+                                <li class="d-flex justify-content-between mb-2">Tuesday<span>9AM - 5PM</span></li>
+                                <li class="d-flex justify-content-between mb-2">Wednesday<span>9AM - 5PM</span></li>
+                                <li class="d-flex justify-content-between mb-2">Thursday<span>9AM - 5PM</span></li>
+                                <li class="d-flex justify-content-between mb-2">Friday<span>9AM - 5PM</span></li>
+                                <li class="d-flex justify-content-between mb-2">Saturday<span>9AM - 5PM</span></li>
+                                <li class="d-flex justify-content-between mb-2">Sunday<span class="text-danger">Close</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-4 border-top">
+                        <h6 class="fw-bold mb-3">Professional Skills</h6>
+                        <div>
+                            <span class="badge bg-success mt-1">User Interface Design</span>
+                            <span class="badge bg-success mt-1">Web Design</span>
+                            <span class="badge bg-success mt-1">Responsive Design</span>
+                            <span class="badge bg-success mt-1">Mobile App Design</span>
+                            <span class="badge bg-success mt-1">UI Design</span>
+                        </div>
+                    </div>
+                    <div class="p-4 border-top">
+                        <h6 class="fw-bold mb-3">Contact Details</h6>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="mb-1 fw-bold">Email</h6>
+                                <p class="text-muted mb-0">gabrielpalmer@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-map-marker"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="mb-1 fw-bold">Address</h6>
+                                <p class="text-muted mb-0">Dodge City, Louisiana</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="ms-3">
+                                <h6 class="mb-1 fw-bold">Phone</h6>
+                                <p class="text-muted mb-0">+1(452) 125-6789</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-3">Job Overview</h6>
+                        <div class="d-flex mt-4 align-items-center">
+                            <i class="fas fa-user"></i>
+                            <div class="ms-3">
+                                <h6 class="mb-2">Job Title</h6>
+                                <p class="text-muted mb-0">Product Designer</p>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled mt-4 mb-0">
+                            <li>
+                                <div class="d-flex mt-4">
+                                    <i class="uil uil-star-half-alt icon bg-soft-primary"></i>
+                                    <div class="ms-3">
+                                        <h6 class="fs-14 mb-2">Experience</h6>
+                                        <p class="text-muted mb-0"> 0-3 Years</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex mt-4">
+                                    <i class="uil uil-location-point icon bg-soft-primary"></i>
+                                    <div class="ms-3">
+                                        <h6 class="fs-14 mb-2">Location</h6>
+                                        <p class="text-muted mb-0"> New york</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex mt-4">
+                                    <i class="uil uil-usd-circle icon bg-soft-primary"></i>
+                                    <div class="ms-3">
+                                        <h6 class="fs-14 mb-2">Offered Salary</h6>
+                                        <p class="text-muted mb-0">$35k - $45k</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex mt-4">
+                                    <i class="uil uil-graduation-cap icon bg-soft-primary"></i>
+                                    <div class="ms-3">
+                                        <h6 class="fs-14 mb-2">Qualification</h6>
+                                        <p class="text-muted mb-0">Bachelor Degree</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex mt-4">
+                                    <i class="uil uil-building icon bg-soft-primary"></i>
+                                    <div class="ms-3">
+                                        <h6 class="fs-14 mb-2">Industry</h6>
+                                        <p class="text-muted mb-0">Private</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex mt-4">
+                                    <i class="uil uil-history icon bg-soft-primary"></i>
+                                    <div class="ms-3">
+                                        <h6 class="fs-14 mb-2">Date Posted</h6>
+                                        <p class="text-muted mb-0">Posted 2 hrs ago</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="#applyNow" data-bs-toggle="modal" class="btn btn-primary btn-hover w-100 mt-2">Apply Now <i
+                                    class="uil uil-arrow-right"></i></a>
+                            <a href="bookmark-jobs.html" class="btn btn-soft-warning btn-hover w-100 mt-2"><i class="uil uil-bookmark"></i>
+                                Add Bookmark</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card mt-4 mt-lg-0 border-secondary">
+                    <img src="https://via.placeholder.com/750x300" class="img-fluid p-4" alt="">
+                    <div class="row g-2 p-4">
+                        <div class="col-lg-3">
+                            <div class="border rounded-start p-3">
+                                <p class="text-muted mb-0 fs-13">Experience</p>
+                                <p class="fw-bold fs-15 mb-0">Minimum 1 Year</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="border p-3">
+                                <p class="text-muted fs-13 mb-0">Employee type</p>
+                                <p class="fw-bold mb-0">Full Time</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="border p-3">
+                                <p class="text-muted fs-13 mb-0">Position</p>
+                                <p class="fw-bold mb-0">Senior</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="border rounded-end p-3">
+                                <p class="text-muted fs-13 mb-0">Offer Salary</p>
+                                <p class="fw-bold mb-0">$2150/ Month</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div>
+                            <h6 class="fw-bold mb-3">About Me</h6>
+                            <p class="mb-2">Very well thought out and articulate communication. Clear
+                                milestones, deadlines and fast work. Patience. Infinite patience. No
+                                shortcuts. Even if the client is being careless. Some quick example text to build on the
+                                card title and bulk the card's content Moltin gives you platform.</p>
+                            <p class="mb-0">As a highly skilled and successfull product development and
+                                design specialist with more than 4 Years of My experience lies in successfully
+                                conceptualizing, designing, and modifying consumer products specific to interior design
+                                and home furnishings.</p>
+                        </div>
+                        <div class="mt-5">
+                            <h6 class="fw-bold mb-0">Education</h6>
+                            <div class="mt-4 d-flex">
+                                <div class="flex-shrink-0"> <i class="fas fa-certificate"></i> </div>
+                                <div class="ms-4">
+                                    <h6 class="fw-bold mb-1">BCA - Bachelor of Computer Applications</h6>
+                                    <p class="mb-2 fst-italic">International University - (2004 - 2010)</p>
+                                    <p class="">There are many variations of passages of available, but the
+                                        majority alteration in some form. As a highly skilled and successfull product
+                                        development and design specialist with more than 4 Years of My experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3">
+                            <h6 class="fw-bold mb-0">Experience</h6>
+                            <div class="mt-4 d-flex">
+                                <div class="flex-shrink-0">1</div>
+                                <div class="ms-4">
+                                    <h6 class="mb-1">Web Design & Development Team Leader</h6>
+                                    <p class="mb-2 text-muted">Creative Agency - (2013 - 2016)</p>
+                                    <p class="text-muted">There are many variations of passages of available, but the
+                                        majority alteration in some form. As a highly skilled and successfull product
+                                        development and design specialist with more than 4 Years of My experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h5 class="fw-bold mb-0">Current Opening</h5>
+                    <div class="card mt-4 border-secondary">
+                        <div class="p-4">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="https://via.placeholder.com/80" alt="" class="img-fluid rounded-3">
+                                </div>
+                                <div class="col-lg-10">
+                                    <div class="mt-3 mt-lg-0">
+                                        <p class="text-muted float-end mb-2"><i class="far fa-heart"></i></p>
+                                        <h5 class="mb-1"><a href="job-details.html" class="text-decoration-none">Magento Developer</a>
+                                            <small class="text-muted">(0-2 Yrs Exp.)</small>
+                                        </h5>
+                                        <ul class="list-inline mb-0">
+                                            <li class="list-inline-item">
+                                                <p class="text-muted mb-0">Jobcy Technology Pvt.Ltd</p>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <p class="text-muted mb-0"><i class="fas fa-map-marker"></i> California</p>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <p class="text-muted mb-0"><i class="fas fa-money"></i> $250 - $800 / month</p>
+                                            </li>
+                                        </ul>
+                                        <div class="mt-2">
+                                            <span class="badge bg-success opacity-75 mt-1">Full Time</span>
+                                            <span class="badge bg-warning opacity-75 mt-1">Urgent</span>
+                                            <span class="badge bg-info opacity-75 mt-1">Private</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                            </div>
+                        </div>
+                        <div class="p-3 bg-light">
+                            <div class="row justify-content-between">
+                                <div class="col-md-8">
+                                    <div>
+                                        Posted 15 days ago.
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-md-end">
+                                        <a href="#applyNow" class="btn btn-primary">Apply Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card bg-light border-secondary text-center mb-4">
+                            <div class="card-body px-4 py-5">
+                                <img src="https://via.placeholder.com/80" alt="" class="img-fluid rounded-3">
+                                <div class="mt-4">
+                                    <a href="company-details.html" class="text-decoration-none">
+                                        <h5 class="fw-bold mb-2">Creative Agency</h5>
+                                    </a>
+                                    <p class="text-muted mb-4">UK</p>
+                    
+                                    <a href="company-details.html" class="btn btn-primary">11 Opening Jobs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-secondary mt-4">
+                            <div class="p-4">
+                                <div class="d-flex mb-4">
+                                    <div class="flex-shrink-0">
+                                        <img src="https://via.placeholder.com/80" alt="" class="rounded">
+                                    </div>
+                                    <div class="ms-3">
+                                        <a href="candidate-details.html" class="primary-link">
+                                            <h5 class="fs-17">Charles Dickens</h5>
+                                        </a>
+                                        <span class="badge bg-primary">$800/month</span>
+                                    </div>
+                                </div>
+                                <div class="border rounded mb-4">
+                                    <div class="row g-0">
+                                        <div class="col-lg-6">
+                                            <div class="border-end px-3 py-2">
+                                                <p class="text-muted mb-0">Exp. : 0-3 Years</p>
+                                            </div>
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-lg-6">
+                                            <div class="px-3 py-2">
+                                                <p class="text-muted mb-0">Freelancers</p>
+                                            </div>
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end row-->
+                                </div>
+                                <p class="text-muted">Some quick example text to build on the card title and bulk the card's content Moltin
+                                    gives you platform.</p>
+                                <div class="mt-3">
+                                    <a href="#" class="btn btn-primary w-100 mb-1">
+                                        <i class="fas fa-user-check me-2"></i> Hire Now</a>
+                                    <a href="#" class="btn btn-danger opacity-75 w-100">
+                                        <i class="fas fa-eye me-2"></i> View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

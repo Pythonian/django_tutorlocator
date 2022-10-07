@@ -12,10 +12,10 @@ urlpatterns = [
 
     # # Registration
     # path('tutor/signup/', views.tutor_signup, name='tutor_signup'),
-    path('signup/', views.signup, name='signup'),
+    path('student/signup/', views.student_signup, name='student_signup'),
 
-    # # Customer account
-    # path('profile/', views.profile, name='profile'),
+    # Student account
+    path('profile/', views.student_profile, name='student_profile'),
     # path('profile/orders/', views.customer_orders, name='orders'),
     # path('profile/addresses/', views.customer_addresses, name='addresses'),
     # path('profile/wishlists/', views.customer_wishlist, name='wishlist'),

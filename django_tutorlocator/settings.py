@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nd3(fc&(5xwuvm$rrf+#wp-%8w6)kq7&w^%d4(x0apsjx_*y)@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
+    'accounts.apps.AccountsConfig',
     'tutors',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +143,12 @@ LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "accounts.backends.EmailAuthenticationBackend",
+]

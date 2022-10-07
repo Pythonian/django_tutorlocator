@@ -15,45 +15,34 @@
 <div class="py-5 bg-light">
     <div class="container">
         <div class="row g-3 mb-5">
-            <div class="col-lg-3 mb-3">
-                <div class="card mb-4">
-                    <div class="card-header">Search</div>
+            <div class="col-lg-8 mx-lg-auto">
+                <div class="card border border-primary shadow-sm">
                     <div class="card-body">
-                        <form method="post" action="">
-                            {% csrf_token %}
-                            <input type="text">
-                            <input type="submit" class="btn btn-success" value="Search" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="d-flex mb-3">
-                    <div class="flex-shrink-0">
-                        <img src="https://via.placeholder.com/150" class="rounded" alt="Sample Image">
-                    </div>
-                    <div class="flex-grow-1 ms-3">
-                        <span class="text-primary float-end">&#8358;2,500 - &#8358;3000 / <small>hr</small></span>
-                        <h5><a href="">Seyi Pythonian</a></h5>
-                        <p class="mb-0 pb-0">Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component into use and I'll let you know.</p>
-                        <p class="m-0">Location: <span class="badge bg-primary">Abuja Building</span></p>
-                        <p class="m-0">Subjects Taught: <span class="badge bg-primary">Abuja Building</span> <span class="badge bg-primary">Abuja Building</span></p>
-                        <p class="m-0">Schedule: <span class="badge bg-primary">One-on-One</span></p>
-                    </div>
-                </div>
-                <div class="d-flex mb-3">
-                    <div class="flex-shrink-0">
-                        <img src="https://via.placeholder.com/150" class="rounded" alt="Sample Image">
-                    </div>
-                    <div class="flex-grow-1 ms-3">
-                        <span class="text-primary float-end">&#8358;2,500 - &#8358;3000 / <small>hr</small></span>
-                        <h5>Seyi Pythonian</h5>
-                        <p class="mb-0 pb-0">Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component
-                            into use and I'll let you know once I do.</p>
-                        <p class="m-0">Location: <span class="badge bg-primary">Abuja Building</span></p>
-                        <p class="m-0">Subjects Taught: <span class="badge bg-primary">Abuja Building</span> <span
-                                class="badge bg-primary">Abuja Building</span></p>
-                        <p class="m-0">Schedule: <span class="badge bg-primary">One-on-One</span></p>
+                        <div class="d-flex mb-3">
+                            <div class="flex-shrink-0">
+                                <img src="https://via.placeholder.com/150" class="rounded" alt="Sample Image">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <span class="text-primary float-end">&#8358;2,500 - &#8358;3000 / <small>hr</small></span>
+                                <h5>Seyi Pythonian</h5>
+                                <p class="mb-0 pb-0">Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component
+                                    into use and I'll let you know once I do.</p>
+                                <p class="m-0">Location: <span class="badge bg-primary"></span></p>
+                                <p class="m-0">Subjects Taught: <span class="badge bg-primary">Abuja Building</span> <span
+                                        class="badge bg-primary">Abuja Building</span></p>
+                                <p class="m-0">Schedule: 
+                                    <span class="badge bg-primary">
+                                        <i class="fa-solid fa-location-crosshairs me-1"></i> One-on-One
+                                    </span>
+                                    <span class="badge bg-primary">
+                                        <i class="fa-solid fa-location-crosshairs me-1"></i> Abuja Building
+                                    </span>
+                                    <span class="badge bg-primary">
+                                        <i class="fa-solid fa-location-crosshairs me-1"></i> One-on-One
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

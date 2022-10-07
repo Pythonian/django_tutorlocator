@@ -32,7 +32,7 @@ class Tutor(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     availability = models.BooleanField(default=True)
     fee_range = models.CharField(max_length=50)
-    # courses_taught ManyToMany?
+    courses = models.ManyToManyField('tutors.Course', related_name='courses')
     designation = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
@@ -46,7 +46,7 @@ class Student(models.Model):
         null=True,
         related_name='student')
     phone_number = models.CharField(
-        max_length=20, blank=True, null=True)
+        max_length=20)
     image = models.ImageField(
         upload_to='students', blank=True, null=True)
     location = models.CharField(

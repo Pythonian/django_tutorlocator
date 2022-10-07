@@ -59,6 +59,7 @@ class Schedule(models.Model):
 
 
 class Testimonial(models.Model):
+    """ Student or Tutor feedback """
     fullname = models.CharField(max_length=100)
     text = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
@@ -69,3 +70,6 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return f"Testimonial by {self.fullname}"
+
+
+# Review

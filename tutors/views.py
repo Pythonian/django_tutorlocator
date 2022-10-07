@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
+from accounts.models import Tutor
 from .models import Course, Testimonial
 
 
@@ -30,12 +31,29 @@ def tutor_requests(request):
 
 
 def search(request):
-    pass
+    
+    template = 'search.html'
+    context = {}
+    return render(request, template, context)
 
 
 def courses(request):
-    pass
+    courses = Course.objects.all()
+    
+    template = 'courses.html'
+    context = {
+        'courses': courses,
+    }
+    return render(request, template, context)
 
 
 def course(request, slug):
-    pass
+    course = get_object_or_404(Course, slug=slug)
+    tutors = Tutor.objects.filter(course=course)
+    
+    template = 'course.html'
+    context = {
+        "course": course,
+        "tutors": tutors,
+    }
+    return render(request, template, context)

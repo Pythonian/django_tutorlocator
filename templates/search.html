@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Find a Tutor{% endblock %}
+
+{% block content %}
+
+<section class="py-3 bg-dark">
+    <div class="container px-5 my-5">
+        <div class="text-white">
+            <h1 class="fw-bolder text-center">Find a Tutor</h1>
+            <p class="mb-3 text-center text-white-50">Please enter the relevant information into the form below. You can choose to only return results from who are you are looking for.</p>
+            <div class="card py-3">
+                <div class="card-body">
+                    <form action="{# url 'search' #}" method="get">
+                        <div class="row">
+                            <!-- <div class="col-lg-2">
+                                <input type="text" class="form-control" placeholder="Name of Course" name="course" id="id_course">
+                            </div> -->
+                            <div class="col-lg-2">
+                                <select name="level" class="form-select" id="id_level">
+                                    <option value="" selected>-- Select Course --</option>
+                                    {# for level in levels #}
+                                    <option value="{{ level.pk }}">Tutor</option>
+                                    {# endfor #}
+                                </select>
+                            </div>
+                            <div class="col-lg-2 form-group">
+                                <select name="level" class="form-select" id="id_level">
+                                    <option value="" selected>-- Select Level --</option>
+                                    {# for level in levels #}
+                                    <option value="{{ level.pk }}">100 Level</option>
+                                    {# endfor #}
+                                </select>
+                            </div>
+                            <div class="col-lg-2 form-group">
+                                <select name="resource_type" class="form-select" id="id_resource_type">
+                                    <option value="" selected>-- Preference --</option>
+                                    {# for resource_type in resource_types #}
+                                    <option value="{{ resource_type.pk }}">Group</option>
+                                    <option value="{{ resource_type.pk }}">One-on-One</option>
+                                    {# endfor #}
+                                </select>
+                            </div>
+                            <div class="col-lg-2 form-group">
+                                <select name="resource_type" class="form-select" id="id_resource_type">
+                                    <option value="" selected>-- Gender --</option>
+                                    {# for resource_type in resource_types #}
+                                    <option value="{{ resource_type.pk }}">Male</option>
+                                    <option value="{{ resource_type.pk }}">Female</option>
+                                    {# endfor #}
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

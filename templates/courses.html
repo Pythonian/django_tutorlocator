@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Browse Tutors by Courses{% endblock %}
+
+{% block content %}
+
+<section class="py-3 bg-dark">
+    <div class="container px-5 my-5">
+        <div class="text-white">
+            <h1 class="fw-bolder text-center">Browse Tutors by Courses</h1>
+        </div>
+    </div>
+</section>
+
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            {% for course in courses %}
+            <div class="col-lg-3 mb-3 fs-5">
+                <i class="fa-solid fa-chevron-right me-2"></i> <a href="{{ course.get_absolute_url }}">{{ course.name }}</a>
+            </div>
+            {% empty %}No data available.
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

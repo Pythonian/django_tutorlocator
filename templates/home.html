@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <img src="{% static 'svg/teaching.svg' %}" class="d-block mx-lg-auto img-fluid" alt="Teaching illustration">
+                <img src="{% static 'images/teaching.svg' %}" class="d-block mx-lg-auto img-fluid" alt="Teaching illustration">
             </div>
         </div>
     </div>
@@ -29,6 +29,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-12 pt-4 text-center">
                 <h2 class="fw-bolder">How It Works</h2>
+                <p>We help you connect with student tutors in your department and faculties <br> who can help you out with the courses that matter to you.</p>
             </div>
         </div>
         <div class="row g-4 py-5">
@@ -44,7 +45,7 @@
                 <div class="d-inline-flex align-items-center justify-content-center text-bg-primary fs-2 mb-3">
                     <i class="fa-solid fa-certificate fa-2x text-primary"></i>
                 </div>
-                <h4>View tutors' qualifications</h4>
+                <h4>View tutors' courses</h4>
                 <p>Book online in about 60 seconds and plan your private lessons according to your own schedule.</p>
             </div>
             <div class="col-lg-3 text-center">
@@ -69,7 +70,7 @@
     <div class="container py-3">
         <div class="row d-flex justify-content-center">
             <div class="col-md-12 pt-4 text-center">
-                <h2 class="fw-bolder">Testimonials</h2>
+                <h2 class="fw-bolder">What Students Say About Us</h2>
             </div>
         </div>
         <div class="row">
@@ -119,22 +120,15 @@
             {% empty %}No data available.
             {% endfor %}
         </div>
-        <div class="row justify-content-center mb-3">
-            <div class="col-lg-8 col-xl-6">
-                <div class="text-center">
-                    <a href="{% url 'courses' %}" class="btn btn-lg btn-primary rounded">View all Courses</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
-<div class="py-5">
+<div class="py-5 bg-dark">
     <div class="container">
         <div class="row gx-5 justify-content-center mb-5">
             <div class="col-lg-8 col-xl-6">
                 <div class="text-center">
-                    <h2 class="fw-bolder">Explore Tutor Locator</h2>
+                    <h2 class="fw-bolder">Join Tutor Locator</h2>
                 </div>
             </div>
         </div>
@@ -169,7 +163,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <a href="{% url 'signup' %}" class="w-100 btn btn-lg btn-primary">Get started</a>
+                        <a href="{% url 'student_signup' %}" class="w-100 btn btn-lg btn-primary">Get started</a>
                     </div>
                 </div>
             </div>
@@ -203,7 +197,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <a href="{% url 'signup' %}" class="w-100 btn btn-lg btn-primary">Get started</a>
+                        <a href="{% url 'student_signup' %}" class="w-100 btn btn-lg btn-primary">Get started</a>
                     </div>
                 </div>
             </div>

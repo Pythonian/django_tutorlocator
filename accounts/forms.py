@@ -1,8 +1,8 @@
-# from django import forms
-# from django.contrib.auth.forms import UserCreationForm
-# from django.db import transaction
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.db import transaction
 
-# from .models import User, Tutor, Student
+from .models import User, Tutor, Student
 
 
 # class TutorSignUpForm(UserCreationForm):
@@ -47,26 +47,28 @@
 #         return user
 
 
-# class CustomerSignUpForm(UserCreationForm):
-#     email = forms.EmailField(required=True)
+class StudentSignUpForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+    first_name = forms.CharField(required=True)
+    last_name = forms.CharField(required=True)
+    phone_number = forms.CharField(required=True)
 
-#     def __init__(self, *args, **kwargs):
-#         super().__init__(*args, **kwargs)
-#         for field in self.visible_fields():
-#             field.field.widget.attrs['class'] = 'form-control'
-#             field.field.help_text = None
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.visible_fields():
+            field.help_text = None
 
-#     class Meta(UserCreationForm.Meta):
-#         model = User
-#         fields = ['username', 'email', 'password1', 'password2']
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = ['email', 'password1', 'password2',
+                  'first_name', 'last_name', 'phone_number']
 
-#     @transaction.atomic
-#     def save(self):
-#         user = super().save(commit=False)
-#         user.is_customer = True
-#         user.save()
-#         return user
-
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email__iexact=email).exists():
+            raise forms.ValidationError(
+                "A user with that email already exists.")
+        return email
 
 # class UserForm(forms.ModelForm):
 
